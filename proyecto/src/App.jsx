@@ -3,15 +3,13 @@ import { useState } from 'react'
 
 function App() {
 
-  const [tesoro, setTesoro] = useState(Math.floor(Math.random()*26));
+
+  const [tesoro, setTesoro] = useState(Math.floor(Math.random()*25));
   const [value, setValue] = useState(Array(25).fill(null));
   const [player, setPlayer] = useState(true);
   const election = (key) => {
     let array2 = [...value]
-    if(player){
-      array2[key]="𝔒"
-    }
-    else{
+    if(tesoro-1==key){
       array2[key]="𝔛"
       {
         Swal.fire({
@@ -22,6 +20,9 @@ function App() {
           imageHeight: 200,
         });
           }
+    }
+    else{
+      array2[key]="𝔒"
     }
     setValue(array2);
     console.log(array2);
