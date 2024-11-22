@@ -6,7 +6,6 @@ function App() {
 
   const [tesoro, setTesoro] = useState(Math.floor(Math.random()*25));
   const [value, setValue] = useState(Array(25).fill(null));
-  const [player, setPlayer] = useState(true);
   const election = (key) => {
     let array2 = [...value]
     if(tesoro-1==key){
@@ -28,7 +27,6 @@ function App() {
     console.log(array2);
     console.log(tesoro);
 }
-
 
   return (
     <>
@@ -61,7 +59,7 @@ function App() {
         <div key={23} onClick={() => election(23)} className='fila'>{value[23]}</div>
         <div key={24} onClick={() => election(24)} className='fila'>{value[24]}</div>
       </div>
-      <button className='peace'>Reiniciar</button>
+      <button className='reset'>Reiniciar</button>
     </>
   )
 }
